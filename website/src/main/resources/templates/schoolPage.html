@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SyuanRu, Jhu school</title>
+		<script>
+			today = new Date();			// 產生日期物件
+			year = today.getFullYear();
+			month = today.getMonth() + 1;
+			date = today.getDate();
+			hour = today.getHours();		// 取得時數
+			minute = today.getMinutes();		// 取得分數
+			//second = today.getSeconds();		// 取得秒數
+			string = "現在時間是：" + year + " 年 " + month + " 月 " + date + " 日 " 
+			          + hour + " 時 " + minute + " 分 "
+					  + "\n歡迎來到我的學歷空間！"
+					  + "\n這兒除了學校還包含我的專案與社團經歷。";	// 連接字串
+					  
+		</script>
+		<script type="text/javascript">
+			//用來紀錄作用中頁籤的ID 預設是第一個頁籤
+			var currentLayer = "cell1";
+			//用來紀錄作用中頁籤的頁面ID 預設是第一個頁面
+			var currentDiv = "d1";
+			//用來紀錄預設的顏色
+			var defaultColor = "#FFFFF2";
+			//用來紀錄各頁籤所要用的顏色值
+			var colorArray = new Array("#FFFFF2","#FFFFF2","#FFFFF2");
+			//showLayer()函式，參數為觸發該函式的元素、所屬頁面ID及顏色索引
+			function showLayer(obj,div,cIndex){
+				//若目前的currentLayer不等於obj.id 表示要換頁面
+				if(currentLayer!=obj.id) {
+					//先改變上一個頁籤及頁面的樣式
+					showIt(currentLayer,currentDiv,cIndex,false);
+					//重設currentLayer及currentDiv的值
+					currentLayer = obj.id;
+					currentDiv = div;
+					//最後再改變目前頁籤及頁面的樣式
+					showIt(currentLayer,currentDiv,cIndex,true);
+				}
+			}
+			//showIt()函式，參數為currentLayer、currentDiv、colorArray的索引及模式
+			//mode為true時 則表示目前作用中 所以要顯示
+			//mode為false時 則表示目前非作用中 所以要隱藏
+			function showIt(o,d,cIndex,mode){
+				var obj = document.getElementById(o);
+				var div = document.getElementById(d);
+				//改變className則表示改變該元素所用的class
+				obj.className = mode?"active":"inactive";
+				div.style.display = mode?"block":"none";
+				//改變頁籤及頁面的背景顏色
+				obj.style.backgroundColor = mode?colorArray[cIndex]:defaultColor;
+				div.style.backgroundColor = mode?colorArray[cIndex]:defaultColor;
+				//可以直接寫div.style.backgroundColor = colorArray[cIndex]
+			}
+		</script>
+		<style>
+			#img1 {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			
+			alert(string);
+			
+		</script>
+		<body background="/img/computer-interface.jpg" style="background-repeat:no-repeat">
+		<font face="DFKai-sb" color="red" size="6">樂於學習、自我精進、教學相長</font>
+		<br>
+		
+		<div style= "width: 100%; border: 0px solid #333; padding: 0px; margin: 0px auto;">
+			<img src="/img/headpicture.jpg"  WIDTH="200" HEIGHT="220" BORDER="0" alt="大頭貼照">
+			<font face="DFKai-sb" size="6"><b><I>朱璿儒(David Jhu)</I><b/></font>
+		</div>
+		
+		<!--個人資料-->
+		<br>
+		<div style="border-width:3px;border-style:dashed;border-color:#4F4FFF;padding:5px;">
+			<ul> 
+				<li>居住地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台北市</li>
+				<li>出生日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1986/09/23</li>
+				<li>電子郵件&nbsp;&nbsp;&nbsp;&nbsp;d32318@gmail.com</li>
+				<li>聯絡電話&nbsp;&nbsp;&nbsp;&nbsp;+886-911-310235</li>
+				<li>兵役&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陸軍役畢(2010/07 – 2011/06)</li>
+			</ul>
+		</div>
+		<br>
+		
+		<table width="1000" border="0" cellspacing="8" cellpadding="0">
+			<tr align="center">
+			<td class="active" id="cell1" style="background-color:#FFFFF2;" onclick="showLayer(this,'d1',0);">高中</td>
+			<td class="inactive" id="cell2" onclick="showLayer(this,'d2',1);">大學</td>
+			<td class="inactive" id="cell3" onclick="showLayer(this,'d3',2);">研究所</td>
+			<td style="border-bottom:1px solid #7D7D7D;">&nbsp;</td>
+			</tr>
+		</table>
+		<div id="d1" class="layer" style="display:block;background-color:#FFFFF2;">
+		<!--高中的內容-->
+			<img src="http://www.pcsh.ntpc.edu.tw/var/file/0/1000/img/logo-new6.png"><br>
+			<font face="DFKai-sb" size="3"><b><I>2002/09 – 2005/06</I><b/></font>
+			<br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>社團</td>
+					<td>內容</td>
+				</tr>
+				<tr>
+					<td>藍嵐書香社 - 副社長</td>
+					<td>
+						<ul> 
+							<li>負責活動規劃、美術與宣傳，將每次活動照片整理成冊，手繪加工成紀錄本，於兩屆的社團活動展覽中皆獲得佳績為社團爭取到活動經費。</li>
+							<li>應圖書館主任邀約，於學校朝會上臺向全校師生宣導利用圖書館閱讀的好處與樂趣。</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="d2" class="layer" style="display:none;">
+		<!--大學的內容-->
+			<img src="https://www.ncu.edu.tw/assets/images/logo.gif"><br>
+			<font face="DFKai-sb" size="5"><b><I>資訊工程學系學士&nbsp;</I><b/></font><br>
+			<font face="DFKai-sb" size="3"><b><I>2006/09 – 2010/06</I><b/></font><br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>專案/論文</td>
+					<td>內容</td>
+				</tr>
+				<tr>
+					<td>程式設計競賽 - 中央大學第一屆自走車設計競賽 (2009)</td>
+					<td>
+						<ul> 
+							<li>佳作</li>
+							<li>與同學共同撰寫自走車循跡演算法</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>中央大學專題競賽 - 多媒體數位學習導覽機器人(2010)</td>
+					<td>
+						<ul> 
+							<li>佳作</li>
+							<li>和兩同學運用自走車與大型模擬觸控板完成導覽機器人系統</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>社團</td>
+					<td>內容</td>
+				</tr>
+				<tr>
+					<td>領袖社 - 營隊活動部長(大一)</td>
+					<td>
+						<ul> 
+							<li>該活動為對國中生舉辦的學習如何領導與合作的營隊活動，活動部主要任務為規畫營隊活動流程、製作道具與表演。</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>全校運動會 - 資工系趣味競賽組長(大二)</td>
+					<td>
+						<ul> 
+							<li>招募學弟妹與同學，利用課餘時間訓練，在校運會趣味競賽項目上獲得冠軍。</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>資工系系運會 - 執行長(大三)</td>
+					<td>
+						<ul> 
+							<li>該活動為資工系首屆舉辦的系上運動會，分成公關組、活動組、美宣組、器材組等</li>
+							<li>我負責招募系上成員加入系運會籌備團隊擔任各組組長與統籌各組活動進度，運動會內容包括運動項目、趣味競賽和最後的抽獎活動。</li>
+							<li>因為是第一次在系上舉辦的活動，在沒有前人經驗下仍順利完成籌備與運動會的活動。</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="d3" class="layer" style="display:none;">
+		<!--研究所的內容-->
+			<img src="https://www.ntpu.edu.tw/chinese/images/home/ntpu-head-logo.png" width="280"/><br>
+			<font face="DFKai-sb" size="5"><b><I>分散及行動計算實驗室</I><b/></font><br>
+			<font face="DFKai-sb" size="5"><b><I>資訊工程學所碩士</I><b/></font><br>
+			<font face="DFKai-sb" size="3"><b><I>2013/09 – 2015/08</I><b/></font><br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>專案/論文</td>
+					<td>內容</td>
+				</tr>
+				<tr>
+					<td>產學合作- 音律電子(2014/06-2015/01)</td>
+					<td>
+						<ul> 
+							<li>與同學共同開發，撰寫Android APP控制數個接著喇叭的rasberry pi上的程式，實現一對多無線喇叭的功能</li>
+							<li>程式語言 - Java、Python</li>
+							<li>硬體 - raspberry pi、Android phone、麵包板、led、按壓式邏輯閘、喇叭</li>
+							<li>作業系統 - Linux、Android</li>
+							<li>通訊 - Wi-Fi direct、NFC、Bluetooth</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>畢業論文 - 以代理人為基礎具期限的工作流排程機制</td>
+					<td>
+						<ul> 
+							<li>在數台主機上安裝XenServer系統，並安裝Hadoop將各主機架構成一個私有雲，使用Java撰寫Agents控制資源，根據每個上傳程式的deadline與取得過去執行時間，分配適當地執行順序</li>
+							<li>程式語言 - Java</li>
+							<li>軟體 - Hadoop</li>
+							<li>作業系統 - Linux、Windows、XenServer</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<style>
+		/* active樣式是給目前所選取頁籤用的 */
+		.active {
+			border: 1px solid #7D7D7D;
+			border-bottom: none;
+			width:	1300;
+			cursor:pointer;
+		}
+		/* inactive樣式是給未選取頁籤用的 */
+		.inactive {
+			border: none;
+			border-bottom: 1px solid #7D7D7D;
+			width:	1300;
+			cursor:pointer;
+		}
+		/* layer樣式是給DIV用的 */
+		.layer {
+			border: 1px solid #7D7D7D;
+			border-top: none;
+			width:	1300;
+			//height:	200;
+		}
+		</style>
+		
+		<br><input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/MainPage'" value="首頁"></input>
+		
+		<br><input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/SchoolPage'" value="我的學歷"></input>
+		
+		<input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/WorkPage'" value="我的工作經歷"></input>
+		
+		<input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/SkillPage'" value="我的專業技能"></input>
+			
+		<input type ="button" onclick="javascript:location.href='https://www.linkedin.com/in/syuanru-jhu'" value="My Linkedin"></input>
+		
+		<input type ="button" onclick="history.back()" value="上一頁"></input>
+	</div>
+	</body>
+</html>

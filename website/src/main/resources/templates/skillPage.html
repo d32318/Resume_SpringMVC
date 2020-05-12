@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SyuanRu, Jhu skill</title>
+		<script>
+			today = new Date();			// 產生日期物件
+			year = today.getFullYear();
+			month = today.getMonth() + 1;
+			date = today.getDate();
+			hour = today.getHours();		// 取得時數
+			minute = today.getMinutes();		// 取得分數
+			//second = today.getSeconds();		// 取得秒數
+			string = "現在時間是：" + year + " 年 " + month + " 月 " + date + " 日 " 
+			          + hour + " 時 " + minute + " 分 "
+					  + "\n歡迎來到我的技能空間！"
+					  + "\n這兒包括了使用過的工具與上過的專業課程。";	// 連接字串
+					  
+		</script>
+		<script type="text/javascript">
+			//用來紀錄作用中頁籤的ID 預設是第一個頁籤
+			var currentLayer = "cell1";
+			//用來紀錄作用中頁籤的頁面ID 預設是第一個頁面
+			var currentDiv = "d1";
+			//用來紀錄預設的顏色
+			var defaultColor = "#FFFFF2";
+			//用來紀錄各頁籤所要用的顏色值
+			var colorArray = new Array("#FFFFF2","#FFFFF2","#FFFFF2");
+			//showLayer()函式，參數為觸發該函式的元素、所屬頁面ID及顏色索引
+			function showLayer(obj,div,cIndex){
+				//若目前的currentLayer不等於obj.id 表示要換頁面
+				if(currentLayer!=obj.id) {
+					//先改變上一個頁籤及頁面的樣式
+					showIt(currentLayer,currentDiv,cIndex,false);
+					//重設currentLayer及currentDiv的值
+					currentLayer = obj.id;
+					currentDiv = div;
+					//最後再改變目前頁籤及頁面的樣式
+					showIt(currentLayer,currentDiv,cIndex,true);
+				}
+			}
+			//showIt()函式，參數為currentLayer、currentDiv、colorArray的索引及模式
+			//mode為true時 則表示目前作用中 所以要顯示
+			//mode為false時 則表示目前非作用中 所以要隱藏
+			function showIt(o,d,cIndex,mode){
+				var obj = document.getElementById(o);
+				var div = document.getElementById(d);
+				//改變className則表示改變該元素所用的class
+				obj.className = mode?"active":"inactive";
+				div.style.display = mode?"block":"none";
+				//改變頁籤及頁面的背景顏色
+				obj.style.backgroundColor = mode?colorArray[cIndex]:defaultColor;
+				div.style.backgroundColor = mode?colorArray[cIndex]:defaultColor;
+				//可以直接寫div.style.backgroundColor = colorArray[cIndex]
+			}
+		</script>
+		<style>
+			#img1 {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			
+			alert(string);
+			
+		</script>
+		<body background="/img/computer-interface.jpg" style="background-repeat:no-repeat">
+		<font face="DFKai-sb" color="red" size="6">樂於學習、自我精進、教學相長</font>
+		<br>
+		
+		<div style= "width: 100%; border: 0px solid #333; padding: 0px; margin: 0px auto;">
+			<img src="/img/headpicture.jpg"  WIDTH="200" HEIGHT="220" BORDER="0" alt="大頭貼照">
+			<font face="DFKai-sb" size="6"><b><I>朱璿儒(David Jhu)</I><b/></font>
+		</div>
+		
+		<!--個人資料-->
+		<br>
+		<div style="border-width:3px;border-style:dashed;border-color:#4F4FFF;padding:5px;">
+			<ul> 
+				<li>居住地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台北市</li>
+				<li>出生日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1986/09/23</li>
+				<li>電子郵件&nbsp;&nbsp;&nbsp;&nbsp;d32318@gmail.com</li>
+				<li>聯絡電話&nbsp;&nbsp;&nbsp;&nbsp;+886-911-310235</li>
+				<li>兵役&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陸軍役畢(2010/07 – 2011/06)</li>
+			</ul>
+		</div>
+		<br>
+		
+		<table width="1000" border="0" cellspacing="8" cellpadding="0">
+			<tr align="center">
+			<td class="active" id="cell1" style="background-color:#FFFFF2;" onclick="showLayer(this,'d1',0);">程式開發</td>
+			<td class="inactive" id="cell2" onclick="showLayer(this,'d2',1);">技術課程</td>
+			<td class="inactive" id="cell3" onclick="showLayer(this,'d3',2);">語言</td>
+			<td style="border-bottom:1px solid #7D7D7D;">&nbsp;</td>
+			</tr>
+		</table>
+		<div id="d1" class="layer" style="display:block;background-color:#FFFFF2;">
+		<!--程式開發相關內容-->
+			<br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>專業技能</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>程式語言</td>
+					<td>
+						<ul> 
+							<li>Java (Spring MVC)</li>
+							<li>JavaScript</li>
+							<li>Ajax</li>
+							<li>jQuery</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>通訊協定&資料格式</td>
+					<td>
+						<ul> 
+							<li>HTTP、SOAP(HTTP、JMS)、TCP/IP</li>
+							<li>NFC、Wi-Fi direct</li>
+							<li>Json、XML、HTML、WSDL</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>資料庫</td>
+					<td>
+						<ul> 
+							<li>Oracle</li>
+							<li>Mysql</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>作業系統</td>
+					<td>
+						<ul> 
+							<li>Windows</li>
+							<li>Linux</li>
+							<li>Android</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>版控</td>
+					<td>
+						<ul> 
+							<li>Apache Subversion (SVN)</li>
+							<li>GIT</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>軟體</td>
+					<td>
+						<ul> 
+							<li>TIBCO 
+								<ul>
+									<li>TIBCO 5、TIBCO CE、TIBCO 6</li>
+									<li>Administrator、TIBCO Enterprise Administrator (TEA)</li>
+									<li>TIBCO Enterprise Message Service (EMS)</li>
+								</ul>
+							</li>
+							<li>Docker</li>
+							<li>SoapUI</li>
+							<li>Gems</li>
+							<li>GemFire Shell (GFSH)</li>
+							<li>Hadoop</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>虛擬機</td>
+					<td>
+						<ul> 
+							<li>Vmware workstation player</li>
+						</ul>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		<div id="d2" class="layer" style="display:none;">
+		<!--文書軟體-->
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>技術課程</td>
+					<td>開班單位</td>
+					<td>開班時間</td>
+					<td>授課講師</td>
+				</tr>
+				<tr>
+					<td>MVC 架構下之 Hibernate動態網站開發實務及 Spring MVC 實戰</td>
+					<td>資拓宏宇</td>
+					<td>2018/06/25 ~ 2018/07/31(區間內的Mon,Wed)18:00-21:00</td>
+					<td>馬全德</td>
+				</tr>
+				<tr>
+					<td>軟體需求與系統分析實務班</td>
+					<td>資拓宏宇</td>
+					<td>2018/05/24 ~ 2018/05/25 09:30-17:30</td>
+					<td>李克精, 孔慶霞</td>
+				</tr>
+				<tr>
+					<td>軟體需求塑模與需求規格文件撰寫實務班</td>
+					<td>資拓宏宇</td>
+					<td>2018/04/20 09:30-17:30</td>
+					<td>李克精, 孔慶霞</td>
+				</tr>
+				<tr>
+					<td>HTML 5 + CSS 3 + JavaScript</td>
+					<td>資拓宏宇</td>
+					<td>2018/04/09 ~ 2018/04/25(區間內的Mon,Wed)18:00-21:00</td>
+					<td>王孝弘</td>
+				</tr>
+				<tr>
+					<td>Java Web應用程式security課程</td>
+					<td>資拓宏宇</td>
+					<td>2018/03/20 ~ 2018/03/28(區間內的Mon,Wed)18:00-21:00</td>
+					<td>馬全德</td>
+				</tr>
+				<tr>
+					<td>Java AJAX & jQuery動態網頁開發實務</td>
+					<td>資拓宏宇</td>
+					<td>2018/03/05 ~ 2018/03/19(區間內的Mon,Wed)18:00-21:00</td>
+					<td>王孝弘</td>
+				</tr>
+				<tr>
+					<td>ASP.NET MVC5 實戰</td>
+					<td>資拓宏宇</td>
+					<td>2017/06/05 ~ 2017/07/11(區間內的Tue)18:00-21:00</td>
+					<td>范連喜</td>
+				</tr>
+				<tr>
+					<td>Spring MVC 實戰</td>
+					<td>資拓宏宇</td>
+					<td>2017/04/11 ~ 2017/04/20(區間內的Tue,Thu)18:00-21:00</td>
+					<td>馬全德</td>
+				</tr>
+				<tr>
+					<td>資料庫開發基礎(含SQL優化)</td>
+					<td>資拓宏宇</td>
+					<td>2016/03/22 ~ 2016/03/24(區間內的Tue,Thu)18:00-21:00</td>
+					<td>陳炯圻</td>
+				</tr>
+			</table>
+		</div>
+		<div id="d3" class="layer" style="display:none;">
+		<!--語言內容-->
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>語言</td>
+					<td>程度</td>
+				</tr>
+				<tr>
+					<td>中文</td>
+					<td>
+						<ul> 
+							<li>聽 - *****</li>
+							<li>說 - *****</li>
+							<li>讀 - *****</li>
+							<li>寫 - *****</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>英文</td>
+					<td>
+						<ul> 
+							<li>聽 - ***</li>
+							<li>說 - ***</li>
+							<li>讀 - ***</li>
+							<li>寫 - ***</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<style>
+		/* active樣式是給目前所選取頁籤用的 */
+		.active {
+			border: 1px solid #7D7D7D;
+			border-bottom: none;
+			width:	1300;
+			cursor:pointer;
+		}
+		/* inactive樣式是給未選取頁籤用的 */
+		.inactive {
+			border: none;
+			border-bottom: 1px solid #7D7D7D;
+			width:	1300;
+			cursor:pointer;
+		}
+		/* layer樣式是給DIV用的 */
+		.layer {
+			border: 1px solid #7D7D7D;
+			border-top: none;
+			width:	1300;
+			//height:	200;
+		}
+		</style>
+		
+		<br><input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/MainPage'" value="首頁"></input>
+		
+		<br><input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/SchoolPage'" value="我的學歷"></input>
+		
+		<input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/WorkPage'" value="我的工作經歷"></input>
+		
+		<input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/SkillPage'" value="我的專業技能"></input>
+		
+		<input type ="button" onclick="history.back()" value="上一頁"></input>
+	</div>
+	</body>
+</html>

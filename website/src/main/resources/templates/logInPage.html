@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>LogIn Page</title>
+	<style>
+		#img1{
+			display: none;
+		}
+		
+		input {padding:5px 15px; background:#ccc; border:0 none;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 5px; }
+	</style>
+</head>
+<body background="/img/computer-interface.jpg" style="background-repeat:no-repeat">
+	<br><br><br><br><br><br><br><br>
+	<form method="post" action="LogInPage" align="center" valign="center">
+		<input type="text" name="userID" placeholder="UserID"/><br><br>
+		<input type="password" name="password" placeholder="PassWord"/><br><br>
+		<input type="submit" value="LogIn" onclick="btnOnclick()"/>
+		<input type="button" value="Register" onclick="javascript:location.href='/MemberAccount/registerPage'"/><br><br>
+		<img src="/img/ajax-loader.gif" id="img1">
+	</form>
+	
+<!-- 	<input type="button" value="Register" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/MainPage'"/> -->
+	
+	<script type="text/javascript">
+		function btnOnclick(){
+			img1.style.display="inline";
+		}
+	</script>
+	<div th:text=" ${loginresult}" align="center"/></div>
+	
+	
+</body>
+</html>

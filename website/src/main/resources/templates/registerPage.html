@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Register Page</title>
+	<style>
+		#img1{
+			display: none;
+		}
+		
+		input {padding:5px 15px; background:#ccc; border:0 none;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 5px; }
+	</style>
+<title>Register page</title>
+</head>
+<body background="/img/computer-interface.jpg" style="background-repeat:no-repeat">
+	<br><br><br><br><br><br>
+	<form method="post" action="RegisterPage" align="center" valign="center">
+		<input type="text" name="userID" placeholder="Enter UserID"/><br><br>
+		<input type="password" name="password" placeholder="Enter password"/><br><br>
+		<input type="password" name="password2" placeholder="Enter password again"/><br><br>
+		<input type="text" name="email" placeholder="Enter email"/><br><br>
+		<input type="text" name="cellphone" placeholder="Enter cellphone"/><br><br>
+		<input type="text" name="address" placeholder="Enter address"/><br><br>
+		<input type="submit" value="Submit Register Request" onclick="btnOnclick()"/><br><br>
+		<img src="/img/ajax-loader.gif" id="img1"><br><br>
+	</form>
+	
+	<div th:text=" ${registerResult}" align="center"/></div>
+</body>
+</html>

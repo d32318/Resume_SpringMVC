@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SyuanRu, Jhu work</title>
+		<script>
+		
+			today = new Date();			// 產生日期物件
+			year = today.getFullYear();
+			month = today.getMonth() + 1;
+			date = today.getDate();
+			hour = today.getHours();		// 取得時數
+			minute = today.getMinutes();		// 取得分數
+			//second = today.getSeconds();		// 取得秒數
+			string = "現在時間是：" + year + " 年 " + month + " 月 " + date + " 日 " 
+			          + hour + " 時 " + minute + " 分 "
+					  + "\n歡迎來到我的工作經歷空間！"
+					  + "\n這兒包含我參與過的專案，"
+					  + "\n還有專案中使用過的技術與工具。";	// 連接字串
+					  
+		</script>
+		<script type="text/javascript">
+			//用來紀錄作用中頁籤的ID 預設是第一個頁籤
+			var currentLayer = "cell1";
+			//用來紀錄作用中頁籤的頁面ID 預設是第一個頁面
+			var currentDiv = "d1";
+			//用來紀錄預設的顏色
+			var defaultColor = "#FFFFF2";
+			//用來紀錄各頁籤所要用的顏色值
+			var colorArray = new Array("#FFFFF2","#FFFFF2","#FFFFF2");
+			//showLayer()函式，參數為觸發該函式的元素、所屬頁面ID及顏色索引
+			function showLayer(obj,div,cIndex){
+				//若目前的currentLayer不等於obj.id 表示要換頁面
+				if(currentLayer!=obj.id) {
+					//先改變上一個頁籤及頁面的樣式
+					showIt(currentLayer,currentDiv,cIndex,false);
+					//重設currentLayer及currentDiv的值
+					currentLayer = obj.id;
+					currentDiv = div;
+					//最後再改變目前頁籤及頁面的樣式
+					showIt(currentLayer,currentDiv,cIndex,true);
+				}
+			}
+			//showIt()函式，參數為currentLayer、currentDiv、colorArray的索引及模式
+			//mode為true時 則表示目前作用中 所以要顯示
+			//mode為false時 則表示目前非作用中 所以要隱藏
+			function showIt(o,d,cIndex,mode){
+				var obj = document.getElementById(o);
+				var div = document.getElementById(d);
+				//改變className則表示改變該元素所用的class
+				obj.className = mode?"active":"inactive";
+				div.style.display = mode?"block":"none";
+				//改變頁籤及頁面的背景顏色
+				obj.style.backgroundColor = mode?colorArray[cIndex]:defaultColor;
+				div.style.backgroundColor = mode?colorArray[cIndex]:defaultColor;
+				//可以直接寫div.style.backgroundColor = colorArray[cIndex]
+			}
+		</script>
+		<style>
+			#img1 {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<form action="" method="post" name="formAdd" id="formAdd">
+			請輸入姓名：<input type="text" name="cName" id="cName"><br/>
+			請輸入生日：<input type="date" name="cBirthday" id="cBirthday"><br/>
+			請輸入Email：<input type="text" name="cEmail" id="cEmail"><br/>
+			<input type="hidden" name="action" value="add">
+			<input type="submit" name="button" value="新增資料">
+			<input type="reset" name="button2" value="重新填寫">
+		</form>-->
+		
+		<script>
+			
+			alert(string);
+			
+		</script>
+		<body background="/img/computer-interface.jpg" style="background-repeat:no-repeat">
+		<font face="DFKai-sb" color="red" size="6">樂於學習、自我精進、教學相長</font>
+		<br>
+		
+		<div style= "width: 100%; border: 0px solid #333; padding: 0px; margin: 0px auto;">
+			<img src="/img/headpicture.jpg"  WIDTH="200" HEIGHT="220" BORDER="0" alt="大頭貼照">
+			<font face="DFKai-sb" size="6"><b><I>朱璿儒(David Jhu)</I><b/></font>
+		</div>
+		
+		<!--個人資料-->
+		<br>
+		<div style="border-width:3px;border-style:dashed;border-color:#4F4FFF;padding:5px;">
+			<ul> 
+				<li>居住地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台北市</li>
+				<li>出生日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1986/09/23</li>
+				<li>電子郵件&nbsp;&nbsp;&nbsp;&nbsp;d32318@gmail.com</li>
+				<li>聯絡電話&nbsp;&nbsp;&nbsp;&nbsp;+886-911-310235</li>
+				<li>兵役&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陸軍役畢(2010/07 – 2011/06)</li>
+			</ul>
+		</div>
+		<br>
+		
+		
+		<table width="1000" border="0" cellspacing="8" cellpadding="0">
+			<tr align="center">
+			<td class="active" id="cell1" style="background-color:#FFFFF2;" onclick="showLayer(this,'d1',0);">資拓</td>
+			<!--<td class="inactive" id="cell2" onclick="showLayer(this,'d2',1);">2</td>
+			<td class="inactive" id="cell3" onclick="showLayer(this,'d3',2);">3</td>-->
+			<td style="border-bottom:1px solid #7D7D7D;">&nbsp;</td>
+			</tr>
+		</table>
+		<div id="d1" class="layer" style="display:block;background-color:#FFFFF2;">
+		<!--高中的內容-->
+			<font face="DFKai-sb" size="5"><b><I>資拓宏宇國際股份有限公司</I><b/></font>
+			<br>
+			<font face="DFKai-sb" size="5"><b><I>軟體開發工程師</I><b/></font>
+			<br>
+			<font face="DFKai-sb" size="3"><b><I>2015/11 - 在職中</I><b/></font>
+			<br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr>
+					<td>專案</td>
+					<td>內容</td>
+				</tr>
+				<tr>
+					<td>
+						<font face="DFKai-sb" size="4"><b>TIBCO 5轉移至TIBCO CE& TIBCO 6之程式換版與整合<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>2018/09 - 至今<b/></font>
+						<br>
+					</td>
+					<td>
+						<font face="DFKai-sb" size="4"><b>系統概述<b/></font><br>
+						<ul> 
+							<li>TIBCO推出CE與6的版本，組內決議將現有ESB系統從TIBCO 5轉移至TIBCO CE與TIBCO 6的版本。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>實作方式<b/></font><br>
+						<ul> 
+							<li>分別測試TIBCO CE與TIBCO 6的內建轉換功能，是否能順利將ESB系統從TIBCO 5的版本轉換成功。</li>
+							<li>測試後發現TIBCO CE與TIBCO 6都會自行生出非預期的檔案，為了避免後續出現更多非預期的問題，決議將ESB系統在TIBCO CE上重新建置。</li>
+							<li>先用TIBCO CE建置簡單的shared / application module的web service範例(包括HTTP與EMS兩種通道)。</li>
+							<li>使用SoapUI測試成功。</li>
+							<li>將TIBCO CE的service拿到TIBCO 6的環境開啟轉換成AppSpace。</li>
+							<li>使用SoapUI測試成功。</li>
+							<li>分別打包成ear檔布署到Docker與TEA上。</li>
+							<li>使用SoapUI與Gems測試成功。</li>
+							<li>將ESB系統程式在TIBCO CE上重新建置與測試。</li>
+							<li>TIBCO CE測試完畢，利用2.的步驟轉換至TIBCO 6並測試。</li>
+							<li>分別布署到Docker與TEA上測試成功。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>工作角色<b/></font><br>
+						<ul> 
+							<li>軟體開發工程師</li>
+							<li>新進同事教育訓練員</li>
+							<li>TIBCO service開發教育訓練員</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face="DFKai-sb" size="4"><b>ESB系統測試程式<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>2018/01 - 2018/08<b/></font>
+						<br>
+					</td>
+					<td>
+						<font face="DFKai-sb" size="4"><b>系統概述<b/></font><br>
+						<ul> 
+							<li>ESB系統開發測試過程中發現測試效率的問題，與主管討論後，提出要為公司ESB系統產品設計一套測試程式。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>實作方式<b/></font><br>
+						<ul> 
+							<li>在監控程式開發過程同時思考設計。</li>
+							<li>最後使用TIBCO與Java設計出可對ESB系統所有的流程節點測試的程式，並為現行5個ESB的pattern共設計出84種測試個案，可靈活調整參數達到測試節點的目的。</li>
+							<li>該套程式已被實際應用於ESB組的產品中測試使用，並持續改版維護中。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>工作角色<b/></font><br>
+						<ul> 
+							<li>軟體開發工程師</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face="DFKai-sb" size="4"><b>ESB系統運作過程的資源監控系統<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>2018/01 - 2018/08<b/></font>
+						<br>
+					</td>
+					<td>
+						<font face="DFKai-sb" size="4"><b>系統概述<b/></font><br>
+						<ul> 
+							<li>ESB系統執行過程中會記錄log，資源監控系統會監控電腦資源使用狀況、service執行狀況、其中也包括service的連線位置等資訊的設置。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>實作方式<b/></font><br>
+						<ul> 
+							<li>使用Java(Spring MVC)撰寫後臺程式，使用Ajax與jQuery撰寫監控系統UI介面，log和連線位置等紀錄在oracle資料庫內。</li>
+							<li>可以在UI介面上選擇要查詢的service資訊(包括ServiceDomain、Operation、UUID、執行時間等)，後臺程式收到訊息後會使用sql語法去資料庫查回對應資料內容，並傳回到UI介面上顯示(呈現方式為資料表格或圖表)。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>工作角色<b/></font><br>
+						<ul> 
+							<li>軟體開發工程師</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face="DFKai-sb" size="4"><b>王道商業銀行開發案、維護案<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>開發案(2016/03 - 2017/12)<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>維護案(2018/01 - 2018/07)<b/></font>
+						<br>
+					</td>
+					<td>
+						<font face="DFKai-sb" size="4"><b>系統概述<b/></font><br>
+						<ul> 
+							<li>王道銀行(原台灣工業銀行)轉型成純網銀，該開發案以個金系統為主，前後台各系統都以ESB系統為中介點串接，ESB系統進行前後臺系統資料欄位應對與格式轉換，並依服務進行一對一或一對多的交易流程處理。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>實作方式<b/></font><br>
+						<ul> 
+							<li>因王道銀行預期要在一年內從原台灣工業銀行轉型為純網銀商業銀行並開業，時程緊迫下，需要一套有系統的協同開發流程，進行有效率的程式開發測試與程式碼交付整合作業。我有這個機會為ESB開發團隊規劃如何透過SVN版控軟體來進行開發作業，下圖為流程文件：</li>
+							<iframe src="https://drive.google.com/file/d/1EIbwF_PRk7Icef55bvic6fSteTqWja6O/preview" width="640" height="480"></iframe>
+							<li>使用TIBCO與Java開發ESB核心系統，因對TIBCO與資拓的ESB產品進行程式開發熟稔，撰寫銀行的個金系統時，除了分工後的一對一對交易，也負責撰寫大部分一對多複雜交易的程式。。</li>
+							<li>將開發完的服務打包成ear檔，布署到dev環境的Administrator上進行測試。</li>
+							<li>針對UAT環境壓力測試，壓測期間每日需產製一份前日壓力測試報表並製作投影片，並於每日下午對王道銀行進行前日壓力測試報告(2016/12)。</li>
+							<li>開發案期間對客戶與資拓工程師進行數次程式開發教育訓練。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>工作角色<b/></font><br>
+						<ul> 
+							<li>ESB程式開發員</li>
+							<li>教育訓練員：對開發出之ESB程式，向王道與資拓成員進行應用教學</li>
+							<li>整合窗口：開發期間，擔當王道與資拓兩方ESB團隊程式與測試報告窗口</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face="DFKai-sb" size="4"><b>新光銀行開發案<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>2017/04 - 2017/07<b/></font>
+						<br>
+					</td>
+					<td>
+						<font face="DFKai-sb" size="4"><b>系統概述<b/></font><br>
+						<ul> 
+							<li>因為新光銀行已經有既有的前後台且資料傳輸方式為TCP/IP，故要使用ESB系統需使用Adapter當傳輸資料的中介點。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>實作方式<b/></font><br>
+						<ul> 
+							<li>使用TIBCO與Java開發Adapter，其中以TCP/IP的方式進行資料傳輸。</li>
+							<li>因新光銀行無法再開資料庫表格，故ESB系統部分內容由讀取資料庫改寫成讀檔方式運行。</li>
+							<li>因新光銀行資料傳輸時的XML內容不帶namespace，故要符合ESB系統傳輸格式，需在adapter層先將namespace透過Java寫的程式加到XML內。</li>
+							<li>開教育訓練會議帶領客戶工程師使用TIBCO與ESB系統進行程式開發。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>工作角色<b/></font><br>
+						<ul> 
+							<li>ESB與Adapter程式開發與測試員</li>
+							<li>教育訓練員：對新光銀行工程師進行ESB系統開發訓練</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<font face="DFKai-sb" size="4"><b>SOA與ESB架構核心系統<b/></font>
+						<br>
+						<font face="DFKai-sb" size="3"><b>2015/11-2016/02<b/></font>
+						<br>
+					</td>
+					<td>
+						<font face="DFKai-sb" size="4"><b>系統概述<b/></font><br>
+						<ul> 
+							<li>該產品主要為串接前後台的中介者，使前後台開發人員在處理通訊協定與資料傳輸格式單一化，ESB系統可根據前後台特定欄位資料內容得知接發訊息的對象，並透過Adapter轉為前後台對應的資料傳輸格式並傳送。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>實作方式<b/></font><br>
+						<ul> 
+							<li>使用TIBCO、Java、資料庫和Web Service開發工具，開發與測試SOA與ESB系統的產品。</li>
+						</ul>
+						<font face="DFKai-sb" size="4"><b>工作角色<b/></font><br>
+						<ul> 
+							<li>ESB程式開發測試員</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="d2" class="layer" style="display:none;">
+		<!--大學的內容-->
+			<font face="DFKai-sb" size="4"><b><I>2</I><b/></font>
+			<br>
+			<font face="DFKai-sb" size="4"><b><I>2</I><b/></font>
+			<br>
+			<font face="DFKai-sb" size="3"><b><I>20xx/xx – 20xx/xx</I><b/></font>
+			<br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr><td>專案/論文</td><td>內容</td></tr>
+				<tr><td>2</td><td>2</td></tr>
+			</table>
+		</div>
+		<div id="d3" class="layer" style="display:none;">
+		<!--研究所的內容-->
+			<font face="DFKai-sb" size="4"><b><I>3</I><b/></font>
+			<br>
+			<font face="DFKai-sb" size="4"><b><I>3</I><b/></font>
+			<br>
+			<font face="DFKai-sb" size="3"><b><I>20xx/xx – 20xx/xx</I><b/></font>
+			<br>
+			<table style="border:8px #FFD382 groove;" cellpadding="10" border='1'>
+				<tr><td>專案/論文</td><td>內容</td></tr>
+				<tr><td>3</td><td>3</td></tr>
+			</table>
+		</div>
+		
+		<style>
+		/* active樣式是給目前所選取頁籤用的 */
+		.active {
+			border: 1px solid #7D7D7D;
+			border-bottom: none;
+			width:	1300;
+			cursor:pointer;
+		}
+		/* inactive樣式是給未選取頁籤用的 */
+		.inactive {
+			border: none;
+			border-bottom: 1px solid #7D7D7D;
+			width:	1300;
+			cursor:pointer;
+		}
+		/* layer樣式是給DIV用的 */
+		.layer {
+			border: 1px solid #7D7D7D;
+			border-top: none;
+			width:	1300;
+			//height:	200;
+		}
+		</style>
+		
+		<br><input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/MainPage'" value="首頁"></input>
+		
+		<br><input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/SchoolPage'" value="我的學歷"></input>
+		
+		<input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/WorkPage'" value="我的工作經歷"></input>
+		
+		<input type ="button" onclick="javascript:location.href='/MemberAccount/SyuanRuJhu/SkillPage'" value="我的專業技能"></input>
+			
+		<input type ="button" onclick="javascript:location.href='https://www.linkedin.com/in/syuanru-jhu'" value="My Linkedin"></input>
+		
+		<input type ="button" onclick="history.back()" value="上一頁"></input>
+	</body>
+</html>
